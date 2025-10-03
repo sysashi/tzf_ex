@@ -1,0 +1,13 @@
+/_build/
+/cover/
+/deps/
+/doc/
+/.fetch
+erl_crash.dump
+*.ez
+tzf_ex-*.tar
+/tzf_ex-*
+/tmp/
+/priv/native/
+/target
+checksum-*.exs
