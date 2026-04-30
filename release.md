@@ -26,3 +26,24 @@
    ```
 
    Example: Use `0.1.1`, not `v0.1.1`, unless the URL logic changes.
+
+7. Wait for GitHub Actions to attach the precompiled NIF archive to the GitHub release.
+8. Update the checksum file from the GitHub release artifact:
+
+   ```bash
+   mix rustler_precompiled.download TzfEx --only-local --no-config
+   ```
+
+   `--no-config` avoids compiling `lib/tzf_ex.ex` before the checksum file knows about the new archive.
+
+9. Verify the normal precompiled path:
+
+   ```bash
+   mix test
+   ```
+
+10. Publish to Hex if consumers depend on the Hex package:
+
+   ```bash
+   mix hex.publish
+   ```
